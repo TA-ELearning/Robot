@@ -1,3 +1,7 @@
 # Robot
 Used for Elearning of Robot Framework
-bia
+
+Command
+
+robot -d Results -v env:prod Tests/eBay
+
