@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Suite description
+Documentation    Sample Test Suite
 Library    SeleniumLibrary
 
 *** Variables ***
@@ -10,22 +10,8 @@ This is a sample test case
     [documentation]    Google test
     [tags]    regression
 
-    Open Google Site
-    Close Chrome Browser
+    Open Browser   http://www.google.com   chrome
+    Close Browser
 
-This is another sample test case
-    [documentation]    Google test
-    [tags]    regression   Sapo
-
-    Open SAPO Site
-    Close Chrome Browser
 
 *** Keywords ***
-Open Google Site
-    Open Browser   http://www.google.com   chrome
-
-Open SAPO Site
-    Open Browser   http://www.sapo.pt   chrome
-
-Close Chrome Browser
-    Close Browser
