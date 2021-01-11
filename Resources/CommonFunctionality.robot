@@ -2,12 +2,13 @@
 Library    SeleniumLibrary
 
 *** Variables ***
-${env}  prod
-&{url}  dev=http://dev.ebay.com  qa=http://qa.ebay.com  prod=http://www.ebay.com
+${env}  qa
+${browser}  chrome
+&{url}  dev=http://dev.ebay.com  qa=http://automationpractice.com/index.php  prod=http://www.ebay.com
 
 *** Keywords ***
 Start TestCase
-    Open Browser    ${url.${env}}    chrome
+    Open Browser    ${url.${env}}    ${browser}
     Maximize Browser Window
 
 Finish TestCase

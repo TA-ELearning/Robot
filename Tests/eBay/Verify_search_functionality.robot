@@ -15,8 +15,9 @@ Verify Basic Search Functionality
     [Documentation]  This test verifies the basic search
     [tags]     Regression    eBay
 
-    HeaderPage.Input Search Text and click Search  robot
-    SearchResultsPage.Verify Search Results  robot
+    HeaderPage.Input Search Text and click Search  mobile
+    SearchResultsPage.Verify Search Results  mobile
+    #SearchResultsPage.Select Product Condition
 
 Verify Basic Search Functionality for books
     [Documentation]  This test verifies the basic search
@@ -24,11 +25,7 @@ Verify Basic Search Functionality for books
 
     HeaderPage.Input Search Text and click Search  books
     SearchResultsPage.Verify Search Results  books
-#Verify Advanced search functionality
-#    [Documentation]  This test verifies the Advanced search
-#    [tags]     Regression    eBay
-#
-#    HeaderPage.Click on Advanced Search link
+
 
 
 

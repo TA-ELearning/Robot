@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Variables  Webelements.py
 
 *** Variables ***
 #${search_text}  robot
@@ -8,9 +9,10 @@ Library    SeleniumLibrary
 *** Keywords ***
 Input Search Text and click Search
     [Arguments]  ${search_text}
-    Input Text    //input[@id='gh-ac']    ${search_text}
-    Click Button    //input[@id='gh-btn']
+    Input Text    ${HeaderPage_SearchInputBox}    ${search_text}
+    Click Button    ${HeaderPage_SearchButton}
 
 Click on Advanced Search link
-    Click Element    //a[@id='gh-as-a']
-    Element Should Be Visible    //b[contains(text(),'Pesquisa avançada')]
+    Click Element    ${HeaderPage_AdvancedSearchLink}
+    Element Should Be Visible    ${HeaderPage_AdvancedSearchText}
+
