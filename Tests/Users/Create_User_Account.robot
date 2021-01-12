@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation  Basic Search Functionality
+Documentation  Test Suit to validade User create account feature
 Library  String
 Resource  ../../Resources/PageObjects/HeaderPage.robot
 Resource  ../../Resources/PageObjects/HomePage.robot
@@ -18,6 +18,7 @@ ${Valid_Email_Create_Account}    test12347@email.com
 
 ${AccountFirstName}    Test Automation AccountFirstName
 ${AccountLastName}    Test Automation AccountLastName
+${Gender}    Mrs
 ${Password}    password123
 ${day}    7
 ${Month}    10
@@ -32,7 +33,7 @@ ${State}    Indiana
 ${Zip}    46183
 ${Country}    United States
 ${information}    Test Automation Test
-${phone}    123456789
+${phone}     123456789
 ${Mobile}    123456789
 ${alias}    Test Automation
 
@@ -47,12 +48,14 @@ TC001 - Create user with success
 
     Homepage.Popular Text Validation
     headerPage.Click Sign In
+
     SignInPage.Verify Sign In Page
     SignInPage.Input Email Create Account    ${Valid_Email_Create_Account}
     SignInPage.Click button Create Account
+
     CreateAnAccountPage.Validade Create Account Page
     CreateAnAccountPage.Validate Email    ${Valid_Email_Create_Account}
-    CreateAnAccountPage.Select Title Mr
+    CreateAnAccountPage.Select Gender Title    ${Gender}
     CreateAnAccountPage.Insert Account First Name    ${AccountFirstName}
     CreateAnAccountPage.Insert Account Last Name    ${AccountLastName}
     CreateAnAccountPage.Insert Password    ${Password}

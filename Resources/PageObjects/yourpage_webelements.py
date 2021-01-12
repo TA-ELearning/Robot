@@ -13,6 +13,9 @@ SignPage_CreateAccount_Button = "//button[@id='SubmitCreate']"
 
 SignPage_AuthenticationText = "//span[contains(text(),'Authentication')]"
 
+SignPage_MsgAuthenticationFailed = "//li[contains(text(),'Authentication failed.')]"
+SignPage_MsgAuthenticationFailed = "//li[contains(text(),'Invalid email address.')]"
+
 # Home Page
 HomePage_PopularText = "//a[contains(text(),'Popular')]"
 

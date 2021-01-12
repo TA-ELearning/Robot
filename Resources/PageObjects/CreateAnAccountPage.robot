@@ -7,8 +7,13 @@ Validade Create Account Page
         Wait Until Element Is Visible     ${CreateAccountPage_Title}
         Capture Page Screenshot
 
-Select Title Mr
-    Click Element    ${CreateAccountPage_PersonalInformation_Title_Mr}
+Select Gender Title
+    [Arguments]  ${Gender}
+    Run keyword if  '${Gender}' == 'Mr'
+    ...     Click Element    ${CreateAccountPage_PersonalInformation_Title_Mr}
+    ...     ELSE
+    ...     Click Element    ${CreateAccountPage_PersonalInformation_Title_Mrs}
+
 # *
 Insert Account First Name
     [Arguments]  ${AccountFirstName}

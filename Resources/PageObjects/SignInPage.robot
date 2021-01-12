@@ -5,7 +5,7 @@ Variables  yourpage_webelements.py
 *** Keywords ***
 Input Email login
     [Arguments]  ${email}
-    Input Text    ${SignPage_SearchInputBox}    ${email}
+    Input Text    ${SignPage_EmailInputBox}    ${email}
 
 Input password
     [Arguments]  ${password}
@@ -23,5 +23,11 @@ Click button Create Account
 
 Verify Sign In Page
     Wait Until Element Is Visible     ${SignPage_AuthenticationText}
+    #To add a proof of sucess
+    Capture Page Screenshot
+
+Verify Message Failed
+    [Arguments]  ${Msg}
+    Wait Until Element Is Visible     //li[contains(text(),'${Msg}')]
     #To add a proof of sucess
     Capture Page Screenshot
