@@ -1,11 +1,11 @@
 *** Settings ***
 Documentation  Basic Search Functionality
 Library  String
-Resource  ../../Resources/PageObjects/Yourpage/HeaderPage.robot
-Resource  ../../Resources/PageObjects/Yourpage/HomePage.robot
-Resource  ../../Resources/PageObjects/Yourpage/SignInPage.robot
-Resource  ../../Resources/PageObjects/Yourpage/CreateAnAccountPage.robot
-Resource  ../../Resources/PageObjects/Yourpage/ProfilePage.robot
+Resource  ../../Resources/PageObjects/HeaderPage.robot
+Resource  ../../Resources/PageObjects/HomePage.robot
+Resource  ../../Resources/PageObjects/SignInPage.robot
+Resource  ../../Resources/PageObjects/CreateAnAccountPage.robot
+Resource  ../../Resources/PageObjects/ProfilePage.robot
 Resource  ../../Resources/CommonFunctionality.robot
 
 Test Setup      CommonFunctionality.Start TestCase
@@ -37,12 +37,14 @@ ${Mobile}    123456789
 ${alias}    Test Automation
 
 *** Test Cases ***
-TC001 - Verify access to Sign In Page
-    [Documentation]  This test verifies the access to Sign In Page
-    [tags]     Regression    yourpage    TC0001
+TC001 - Create user with success
+    [Documentation]  This test create a user with success
+    [tags]     Regression    SiteDemo    TC0001
 
+    # Create Random email
     ${RANUSER}  Generate Random String  5  [LETTERS]
     ${Valid_Email_Create_Account} =    Catenate     SEPARATOR=    ${RANUSER}    ${Valid_Email_Create_Account}
+
     Homepage.Popular Text Validation
     headerPage.Click Sign In
     SignInPage.Verify Sign In Page
