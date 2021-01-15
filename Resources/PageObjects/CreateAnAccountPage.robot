@@ -105,3 +105,4 @@ Insert alias for future reference
 
 Click Button Register
     Click Element    ${CreateAccountPage_Button_Register}
+
